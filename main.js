@@ -4,6 +4,7 @@ import { setupCounter } from "./counter.js";
 import buttonStyle from "./button.module.css";
 import redTshirt from "./redTshirt.jpg";
 import imageStyle from "./image.module.css";
+import data from "./data.json";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -22,6 +23,7 @@ document.querySelector("#app").innerHTML = `
     </p>
     <button id='btn'>Click!</button>
     <img id="img"/>
+    <pre>${JSON.stringify()}</pre>
     </div>
 `;
 
