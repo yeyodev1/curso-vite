@@ -4,7 +4,16 @@ import { setupCounter } from "./counter.js";
 import buttonStyle from "./button.module.css";
 import redTshirt from "./redTshirt.jpg";
 import imageStyle from "./image.module.css";
-import data from "./data.json";
+import { user } from "./data.json";
+
+const modules = import.meta.glob("./modules/*.js");
+console.log(modules);
+
+for (const path in modules) {
+	modules[path]().then((module) => {
+		module.load();
+	});
+}
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -23,7 +32,7 @@ document.querySelector("#app").innerHTML = `
     </p>
     <button id='btn'>Click!</button>
     <img id="img"/>
-    <pre>${JSON.stringify()}</pre>
+    <pre>${JSON.stringify(user)}</pre>
     </div>
 `;
 
