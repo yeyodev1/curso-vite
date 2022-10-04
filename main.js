@@ -2,6 +2,8 @@ import "./style.css";
 import javascriptLogo from "./javascript.svg";
 import { setupCounter } from "./counter.js";
 import buttonStyle from "./button.module.css";
+import redTshirt from "./redTshirt.jpg";
+import imageStyle from "./image.module.css";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -19,9 +21,16 @@ document.querySelector("#app").innerHTML = `
       Click on the Vite logo to learn more
     </p>
     <button id='btn'>Click!</button>
-  </div>
+    <img id="img"/>
+    </div>
 `;
 
 setupCounter(document.querySelector("#counter"));
 
 document.getElementById("btn").className = buttonStyle;
+
+const image = document.getElementById("img");
+
+image.src = redTshirt;
+
+image.className = imageStyle.img;
